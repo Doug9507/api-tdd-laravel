@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers\Api;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Post;
 
 class PostControllerTest extends TestCase
 {
@@ -40,5 +41,28 @@ class PostControllerTest extends TestCase
         //status que dice que no se completo la solicitud, se creo bien pero fue rechazado
         $response->assertStatus(422)
         ->assertJsonValidationErrors('title');
+    }
+
+    public function test_show(){
+        
+        $this->withoutExceptionHandling();
+
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('GET',"/api/posts/$post->id");
+
+        $response->assertJsonStructure(['id','title','created_at','updated_at'])
+        ->assertJson(['title' => $post->title])
+        //status OK
+        ->assertStatus(200); 
+
+    }
+
+    public function test_404_show(){
+
+        $response = $this->json('GET','/api/posts/1000');
+
+        //Recurso no encontrado
+        $response->assertStatus(404);
     }
 }
