@@ -74,6 +74,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return response()->json(null,200);
+        return response()->json(['mensaje' => 'Registro eliminado satisfactoriamente.'],200);
     }
 }
