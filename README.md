@@ -9,8 +9,29 @@
 
 ## Sobre el proyecto api-tdd-laravel
 
-Se basa en la construcción de un api haciendo uso de la metodologia TDD y todo construido en laravel.
+Se basa en la construcción de una api haciendo uso de la metodologia TDD, construido en laravel. Un ejemplo sencillo sobre la uso e implementación de dicha metodología. Para las peticiones http se hizo uso de POSTMAN.
 
+## Vistas previas de las peticiones HTTP
+
+## Vista N° 1
+- Vista de la peticion GET
+
+![Vista de la peticion GET](https://raw.githubusercontent.com/Doug9507/api-tdd-laravel/master/public/img/get-view.png)
+
+## Vista N° 2
+Vista de la peticion POST
+
+![Vista de la peticion POST](https://raw.githubusercontent.com/Doug9507/api-tdd-laravel/master/public/img/post-view.png)
+
+## Vista N° 3
+Vista de la peticion PUT
+
+![Vista de la peticion PUT](https://raw.githubusercontent.com/Doug9507/api-tdd-laravel/master/public/img/put-view.png)
+
+## Vista N° 4
+Vista de la peticion DELETE
+
+![Vista de la peticion DELETE](https://raw.githubusercontent.com/Doug9507/api-tdd-laravel/master/public/img/delete-view.png)
 
 ## About Laravel
 
