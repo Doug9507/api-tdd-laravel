@@ -82,4 +82,15 @@ class PostControllerTest extends TestCase
 
         $this->assertDatabaseHas('posts',['title' => 'Titulo actualizado']);
     }
+
+    public function test_delete(){
+
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('DELETE',"/api/posts/$post->id");
+
+        $response->assertSee(null)->assertStatus(200);
+
+        $this->assertDatabaseMissing('posts',['id' => $post->id]);
+    }
 }
