@@ -21,7 +21,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = $this->post->paginate();
+
+        return response()->json($posts,200);
     }
 
     /**
@@ -45,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return response()->json($post);
+        return response()->json($post,200);
     }
 
     /**
@@ -59,7 +61,7 @@ class PostController extends Controller
     {
         $post->update($request->all());
 
-        return response()->json($post);
+        return response()->json($post,200);
     }
 
     /**
@@ -71,5 +73,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
+
+        return response()->json(null,200);
     }
 }
